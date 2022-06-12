@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+
+// import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { startLogout } from "../redux/actions/authAction";
+// import { startLogout } from "../redux/actions/authAction";
 
 export const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [language, setLanguage] = useState("en");
 
   const onChangeLanguage = () => {
@@ -19,17 +20,18 @@ export const Navbar = () => {
   };
 
   const handleLogout = () => {
-    dispatch(startLogout());
+    // dispatch(startLogout());
+    console.log('onClick');
   };
 
   return (
-    <div className="container-nav flex-wrap">
-      <div className="container-ptitle">
-        <h1 className="principal-title">Rick & Morty</h1>
+    <div className="flex-wrap">
+      <div className="">
+        <h1 className="">Rick & Morty</h1>
       </div>
-      <div className="container-nav-out flex-wrap">
-        <div className="navlist-container container-flex-center w100">
-          <li className="nav-list pt-2 container-flex-center">
+      <div className="flex-wrap">
+        <div className=" w-100">
+          <li className="">
             <ul className="mr-3">
               <Link to="/"> {t("nav.home")} </Link>
             </ul>

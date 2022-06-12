@@ -1,10 +1,10 @@
 import { Card } from "../components/Card";
 import { Navbar } from "../components/Navbar"
-import { useFetch } from "../hooks/useFetch.tsx";
+// import { useFetch } from "../hooks/useFetch.tsx";
 import { useTranslation } from "react-i18next";
 
 export const Home = () => {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
   // const { loading, results } = useFetch();
 
@@ -22,7 +22,7 @@ export const Home = () => {
         } */}
       </section>
       <footer className="">
-        {/* <p>{t('footer.by')}<span>Jorge Arancibia</span></p> */}
+        <p>{t('footer.by')}<span>Jorge Arancibia</span></p>
       </footer>
     </div>
   )
