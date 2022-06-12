@@ -1,17 +1,23 @@
-export const Card = (props) => {
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+
+export const BootstrapCard = (props) => {
+  // Colocar valores por defecto
   const { name, image, gender, origin, status, species } = props;
 
   const alt = `Imagen de ${name}`;
   return (
-    <div className="container-card d-flex flex-column container-flex-center-a m-2 mt-5">
-      <h3 className="card-name my-2">{name}</h3>
-      <img className="img-card" src={image} alt={alt} />
-      <div className="container-flex-center d-flex flex-column py-4">
-        <p className="especie">Especie: {species}</p>
-        <p className="estado">Estado: {status}</p>
-        <p className="genero">Genero: {gender}</p>
-        <p className="origen">Origen: {origin.name}</p>
-      </div>
-    </div>
+    <Col>
+      <Card style={{ width: '18rem', borderRadius: '20px', overflow: 'hidden' }} className="bg-dark">
+        <Card.Img variant="top" src={image} alt={alt} />
+        <Card.Body className='text-center'>
+          <Card.Title>{name}</Card.Title>
+          <p className="especie">Especie: {species}</p>
+          <p className="estado">Estado: {status}</p>
+          <p className="genero">Genero: {gender}</p>
+          <p className="origen">Origen: {origin.name}</p>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 };
