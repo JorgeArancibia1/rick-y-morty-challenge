@@ -1,0 +1,48 @@
+
+.fs-xxs {
+	font-size: $font-size-xxs;
+}
+.fs-xs {
+	font-size: $font-size-xs;
+}
+.fs-s {
+	font-size: $font-size-s;
+}
+.fs-m {
+	font-size: $font-size-m;
+}
+.fs-l {
+	font-size: $font-size-l;
+}
+.fs-xl {
+	font-size: $font-size-xl;
+}
+.fs-xxl {
+	font-size: $font-size-xxl;
+}
+
+.container-flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-flex-center-j {
+	display: flex;
+	justify-content: center;
+}
+
+.container-flex-center-a {
+	display: flex;
+	align-items: center;
+}
+
+.container-flex-center-end {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.w100 {
+	width: 100vw;
+}

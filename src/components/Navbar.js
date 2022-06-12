@@ -25,13 +25,13 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="flex-wrap">
-      <div className="">
-        <h1 className="">Rick & Morty</h1>
+    <div className="container-nav flex-wrap">
+      <div className="container-ptitle">
+        <h1 className="principal-title text-bg-light">Rick & Morty</h1>
       </div>
-      <div className="flex-wrap">
-        <div className=" w-100">
-          <li className="">
+      <div className="container-nav-out flex-wrap">
+        <div className="navlist-container container-flex-center w100">
+          <li className="nav-list pt-2 container-flex-center">
             <ul className="mr-3">
               <Link to="/"> {t("nav.home")} </Link>
             </ul>

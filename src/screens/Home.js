@@ -8,22 +8,31 @@ export const Home = () => {
 
   const { loading, results } = useFetch();
 
-  console.log('Home Results =>', results);
+  console.log('Home Results =>', loading);
 
   return (
-    <div>
-      <h1>hola</h1>
-      <Navbar />
-      <section className="">
-        {
-          results.map(card => {
-            return <Card {...card} key={card.id} />
-          })
-        }
-      </section>
-      <footer className="">
-        <p>{t('footer.by')}<span>Jorge Arancibia</span></p>
-      </footer>
-    </div>
+    loading ?
+      <h1>Espere...</h1>
+      :
+      <>
+        <div className="container">
+          <div className="row">
+            <Navbar />
+          </div>
+
+          <section className="cards-section pr-5 pl-5 container-flex-center-a container-flex-center-j flex-wrap ">
+            <div className="row">
+              {
+                results.map(card => {
+                  return <Card {...card} key={card.id} />
+                })
+              }
+            </div>
+          </section>
+          <footer className="container-flex-center-j my-5 ">
+            <p>{t('footer.by')}<span>Jorge Arancibia</span></p>
+          </footer>
+        </div>
+      </>
   )
 }
