@@ -1,8 +1,21 @@
-export const getInfoCharacter = async () => {
+export const getInfoCharacters = async () => {
   try {
     const url = 'https://rickandmortyapi.com/api/character';
     const response = await fetch(url);
     const res = await response.json();
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getInfoOneCharacter = async (id) => {
+  try {
+    const url = `https://rickandmortyapi.com/api/character/${id}`;
+    const response = await fetch(url);
+    const res = await response.json();
+    console.log(res);
 
     return res;
   } catch (error) {

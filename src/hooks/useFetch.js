@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getInfoCharacter, getInfoEpisode, getInfoLocation } from "../services/getInfo.js";
+import { getInfoCharacters, getInfoEpisode, getInfoLocation } from "../services/getInfo.js";
 
 export const useFetch = (typeInfo) => {
 	const [stateInfo, setStateInfo] = useState({
@@ -18,7 +18,7 @@ export const useFetch = (typeInfo) => {
 			const {
 				info,
 				results
-			} = typeInfo === 'character' ? await getInfoCharacter() : typeInfo === 'location' ? await getInfoLocation() : await getInfoEpisode();
+			} = typeInfo === 'character' ? await getInfoCharacters() : typeInfo === 'location' ? await getInfoLocation() : await getInfoEpisode();
 
 			setStateInfo({
 				info,

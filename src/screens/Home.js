@@ -12,9 +12,9 @@ export const Home = () => {
   const locations = useFetch('location');
   const episodes = useFetch('episode');
 
-  console.log('CHARACTERS => ', characters.results);
-  console.log('LOCATIONS => ', locations.results);
-  console.log('EPISODES => ', episodes.results);
+  // console.log('CHARACTERS => ', characters.results);
+  // console.log('LOCATIONS => ', locations.results);
+  // console.log('EPISODES => ', episodes.results);
 
   return (
     characters.loading ?
