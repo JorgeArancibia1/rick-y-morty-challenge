@@ -1,8 +1,7 @@
-import { BootstrapCard } from "../components/BootstrapCard";
 import { Navbar } from "../components/Navbar"
 import { useFetch } from "../hooks/useFetch.js";
 import { useTranslation } from "react-i18next";
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { RenderList } from "../components/RenderList";
 
 export const Home = () => {
@@ -11,10 +10,6 @@ export const Home = () => {
   const characters = useFetch('character');
   const locations = useFetch('location');
   const episodes = useFetch('episode');
-
-  // console.log('CHARACTERS => ', characters.results);
-  // console.log('LOCATIONS => ', locations.results);
-  // console.log('EPISODES => ', episodes.results);
 
   return (
     characters.loading ?

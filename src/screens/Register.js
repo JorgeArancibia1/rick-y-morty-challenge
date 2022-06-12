@@ -1,23 +1,21 @@
-// import { useDispatch } from 'react-redux';
-// import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-// import { startRegister } from '../redux/actions/authAction';
+import { createUser } from '../services/authService';
 
 export const Register = () => {
   // const dispatch = useDispatch();
 
   const [formRegisterValues, handleRegisterInputChange] = useForm({
-    remail: '',
-    rpassword: '',
+    email: '',
+    password: '',
   });
 
-  const { remail, rpassword } = formRegisterValues;
+  const { email, password } = formRegisterValues;
 
   const handleRegister = (e) => {
     e.preventDefault();
-
-    // dispatch(startRegister(remail, rpassword));
+    createUser('POST', { email, password })
+    // dispatch(startRegister(email, rpassword));
   };
 
   return (
@@ -29,20 +27,20 @@ export const Register = () => {
           <input
             type="text"
             placeholder="Email"
-            name="remail"
+            name="email"
             className=""
             autoComplete="off"
-            value={remail}
+            value={email}
             onChange={handleRegisterInputChange}
           />
 
           <input
             type="password"
             placeholder="Password"
-            name="rpassword1"
+            name="password"
             className=""
             autoComplete="off"
-            value={rpassword}
+            value={password}
             onChange={handleRegisterInputChange}
           />
 

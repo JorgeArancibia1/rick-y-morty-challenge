@@ -46,7 +46,7 @@ export const Login = () => {
           <br />
           <input className="login-button" type="submit" value="Entrar" />
           <br />
-          <Link to="/signup">Sign up</Link>
+          <Link to="/register">Sign up</Link>
         </form>
       </div>
     </div>
