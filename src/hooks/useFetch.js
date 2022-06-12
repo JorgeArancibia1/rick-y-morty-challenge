@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { DataInterface } from "../interfaces/getInfoInterface.js";
 import { getInfo } from "../services/getInfo.js";
 
 export const useFetch = () => {
-	const [ stateInfo, setStateInfo ] = useState<DataInterface>({
+	const [ stateInfo, setStateInfo ] = useState({
 		info: {
 			count: 0,
 			pages: 0,
