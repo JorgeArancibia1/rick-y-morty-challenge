@@ -20,9 +20,31 @@ export const Home = () => {
           <div className="row">
             <Navbar />
           </div>
+          <h2>Characters</h2>
+          <section className="cards-section pr-5 pl-5">
+            <Row xs={1} md={4} className="g-4 d-flex flex-nowrap">
+              {
+                results.map(card => {
+                  return <BootstrapCard {...card} key={card.id} />
+                })
+              }
+            </Row>
+          </section>
 
-          <section className="cards-section pr-5 pl-5 container-flex-center-a container-flex-center-j flex-wrap ">
-            <Row xs={1} md={4} className="g-4 flex-wrap">
+          <h2>Locations</h2>
+          <section className="cards-section pr-5 pl-5">
+            <Row xs={1} md={4} className="g-4 d-flex flex-nowrap">
+              {
+                results.map(card => {
+                  return <BootstrapCard {...card} key={card.id} />
+                })
+              }
+            </Row>
+          </section>
+
+          <h2>Episodes</h2>
+          <section className="cards-section pr-5 pl-5">
+            <Row xs={1} md={4} className="g-4 d-flex flex-nowrap">
               {
                 results.map(card => {
                   return <BootstrapCard {...card} key={card.id} />
