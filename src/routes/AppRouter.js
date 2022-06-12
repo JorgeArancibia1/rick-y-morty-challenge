@@ -17,6 +17,8 @@ export const AppRouter = () => {
         <Route path="/detail-character/:id" element={<DetailCharacter />}></Route>
         <Route path="/detail-location/:id" element={<DetailLocation />}></Route>
         <Route path="/detail-episode/:id" element={<DetailEpisode />}></Route>
+
+        <Route path="*" element={<h1>404 Not found</h1>}></Route>
       </Routes>
     </BrowserRouter>
   );
