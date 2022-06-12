@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getInfo } from "../services/getInfo.js";
+import { getInfoCharacter, getInfoEpisode, getInfoLocation } from "../services/getInfo.js";
 
-export const useFetch = () => {
-	const [ stateInfo, setStateInfo ] = useState({
+export const useFetch = (typeInfo) => {
+	const [stateInfo, setStateInfo] = useState({
 		info: {
 			count: 0,
 			pages: 0,
@@ -12,22 +12,22 @@ export const useFetch = () => {
 		results: [],
 		loading: true,
 	});
-	
-	
+
 	useEffect(() => {
-		const fetch = async () => {
+		const fetchCharacter = async () => {
 			const {
 				info,
 				results
-			} = await getInfo();
-			
+			} = typeInfo === 'character' ? await getInfoCharacter() : typeInfo === 'location' ? await getInfoLocation() : await getInfoEpisode();
+
 			setStateInfo({
 				info,
 				results,
 				loading: false,
 			});
 		};
-		fetch();
+
+		fetchCharacter()
 	}, []);
 
 	return stateInfo;

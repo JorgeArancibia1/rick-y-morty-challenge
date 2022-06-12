@@ -1,18 +1,23 @@
-import { BootstrapCard } from "../components/Card";
+import { BootstrapCard } from "../components/BootstrapCard";
 import { Navbar } from "../components/Navbar"
 import { useFetch } from "../hooks/useFetch.js";
 import { useTranslation } from "react-i18next";
 import { Container, Row } from 'react-bootstrap';
+import { RenderList } from "../components/RenderList";
 
 export const Home = () => {
   const { t } = useTranslation();
 
-  const { loading, results } = useFetch();
+  const characters = useFetch('character');
+  const locations = useFetch('location');
+  const episodes = useFetch('episode');
 
-  console.log('Home Results =>', loading);
+  console.log('CHARACTERS => ', characters.results);
+  console.log('LOCATIONS => ', locations.results);
+  console.log('EPISODES => ', episodes.results);
 
   return (
-    loading ?
+    characters.loading ?
       <h1>Espere...</h1>
       :
       <>
@@ -20,37 +25,20 @@ export const Home = () => {
           <div className="row">
             <Navbar />
           </div>
-          <h2>Characters</h2>
-          <section className="cards-section pr-5 pl-5">
-            <Row xs={1} md={4} className="g-4 d-flex flex-nowrap">
-              {
-                results.map(card => {
-                  return <BootstrapCard {...card} key={card.id} />
-                })
-              }
-            </Row>
+          {/* SEARCH INPUT */}
+          <section className="">
+            <h2>Characters</h2>
+            <RenderList results={characters.results} />
           </section>
 
-          <h2>Locations</h2>
-          <section className="cards-section pr-5 pl-5">
-            <Row xs={1} md={4} className="g-4 d-flex flex-nowrap">
-              {
-                results.map(card => {
-                  return <BootstrapCard {...card} key={card.id} />
-                })
-              }
-            </Row>
+          <section className="">
+            <h2>Locations</h2>
+            <RenderList typeCard="location" results={locations.results} />
           </section>
 
           <h2>Episodes</h2>
-          <section className="cards-section pr-5 pl-5">
-            <Row xs={1} md={4} className="g-4 d-flex flex-nowrap">
-              {
-                results.map(card => {
-                  return <BootstrapCard {...card} key={card.id} />
-                })
-              }
-            </Row>
+          <section className="">
+            <RenderList typeCard="episode" results={episodes.results} />
           </section>
           <footer className="container-flex-center-j my-5 ">
             <p>{t('footer.by')}<span>Jorge Arancibia</span></p>
