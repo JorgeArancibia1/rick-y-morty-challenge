@@ -1,4 +1,6 @@
 import { AppRouter } from './routes/AppRouter';
+import './i18n'
+
 
 function App() {
   return (
