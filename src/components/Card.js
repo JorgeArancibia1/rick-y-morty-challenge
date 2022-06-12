@@ -8,7 +8,7 @@ export const BootstrapCard = (props) => {
   const alt = `Imagen de ${name}`;
   return (
     <Col>
-      <Card style={{ width: '18rem', borderRadius: '20px', overflow: 'hidden' }} className="bg-dark">
+      <Card style={{ width: '18rem', borderRadius: '20px', overflow: 'hidden' }} className="">
         <Card.Img variant="top" src={image} alt={alt} />
         <Card.Body className='text-center'>
           <Card.Title>{name}</Card.Title>
