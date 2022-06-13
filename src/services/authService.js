@@ -34,10 +34,29 @@ export const createUser = async (method = 'POST', user) => {
   } catch (error) {
     console.log(error);
   }
+};
 
-  // SEND
-  // {
-  //   "name": "morpheus",
-  //   "job": "leader"
-  // }
+export const loginUser = async (method = 'POST', user) => {
+  console.log(user);
+  try {
+    const url = 'https://reqres.in/api/login';
+    const response = await fetch(url, {
+      method,
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+    const res = await response.json();
+
+    localStorage.setItem('token', res.token);
+    localStorage.setItem('token-init-date', new Date().getTime());
+
+
+    console.log('RES USER => ', res);
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
 };

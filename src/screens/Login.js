@@ -1,20 +1,22 @@
 // import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
+import { loginUser } from '../services/authService';
 // import { startLogin } from '../redux/actions/authAction';
 
 export const Login = () => {
   // const dispatch = useDispatch();
 
   const [formLoginValues, handleLoginInputChange] = useForm({
-    lemail: '',
-    lpassword: '',
+    email: '',
+    password: '',
   });
 
-  const { lemail, lpassword } = formLoginValues;
+  const { email, password } = formLoginValues;
 
   const handleLogin = (e) => {
     e.preventDefault();
+    loginUser('POST', { email, password })
     // dispatch(startLogin(lemail, lpassword));
   };
 
@@ -28,9 +30,9 @@ export const Login = () => {
             className="input-name"
             type="text"
             placeholder="Email"
-            name="lemail"
+            name="email"
             autoComplete="off"
-            value={lemail}
+            value={email}
             onChange={handleLoginInputChange}
           />
           <br />
@@ -38,9 +40,9 @@ export const Login = () => {
             className="input-password"
             type="password"
             placeholder="Password"
-            name="lpassword"
+            name="password"
             autoComplete="off"
-            value={lpassword}
+            value={password}
             onChange={handleLoginInputChange}
           />
           <br />
