@@ -24,8 +24,8 @@ export const createUser = async (method = 'POST', user) => {
     });
     const res = await response.json();
 
-    localStorage.setItem('token', res.token);
-    localStorage.setItem('token-init-date', new Date().getTime());
+    // localStorage.setItem('token', res.token);
+    // localStorage.setItem('token-init-date', new Date().getTime());
 
 
     console.log('RES USER => ', res);
@@ -37,7 +37,7 @@ export const createUser = async (method = 'POST', user) => {
 };
 
 export const loginUser = async (method = 'POST', user) => {
-  console.log(user);
+  // console.log(user);
   try {
     const url = 'https://reqres.in/api/login';
     const response = await fetch(url, {
@@ -49,11 +49,11 @@ export const loginUser = async (method = 'POST', user) => {
     });
     const res = await response.json();
 
-    localStorage.setItem('token', res.token);
-    localStorage.setItem('token-init-date', new Date().getTime());
+    // localStorage.setItem('token', res.token);
+    // localStorage.setItem('token-init-date', new Date().getTime());
 
 
-    console.log('RES USER => ', res);
+    // console.log('RES USER => ', res);
 
     return res;
   } catch (error) {
