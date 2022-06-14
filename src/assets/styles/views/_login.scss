@@ -1,0 +1,61 @@
+body{
+	background-color: #151517;
+	font-family: 'Dela Gothic One';
+	color: $suport-darkgrey-color;
+}
+.container-home {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	background-image: url('https://fondosmil.com/fondo/27365.png');
+	// background-position-x: 180px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.container-title-form {
+	margin-top: -80px;
+	width: 50vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.title-login {
+	color: $suport-darkgrey-color;
+	margin: 20px;
+	font-size: $font-size-xl;
+	font-family: 'Arial';
+}
+
+.form-home {
+	width: 350px;
+	border: 1px solid $suport-darkgrey-color;
+	border-radius: 5px;
+	padding: 20px 0;
+	color: $suport-darkgrey-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title-login {
+	font-family: 'Dela Gothic One';
+
+	font-size: 2em;
+}
+
+.login-button {
+  background-color: $rick-color;
+  border: 1px solid $principal-color;
+	padding: 5px 10px;
+	cursor: pointer;
+	
+}
+
+a {
+	color: $suport-darkgrey-color;
+	font-family: 'Dela Gothic One';
+}
+

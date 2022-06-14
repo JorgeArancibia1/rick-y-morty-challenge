@@ -1,0 +1,23 @@
+
+// Base
+@import './base/_reset';
+@import './lib/colors';
+@import './lib/variables';
+@import './base/fonts';
+@import './base/general';
+
+// Mixins
+
+
+//Components
+@import './components/navbar';
+@import './components/card';
+
+
+//Views
+
+@import './views/home';
+@import './views/login';
+@import './base/mediaquerys.scss';
+
+

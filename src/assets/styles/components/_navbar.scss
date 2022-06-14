@@ -1,0 +1,67 @@
+.container-nav {
+	display: flex;
+	justify-content: flex-end;
+	width: 100vw;
+	flex-wrap: wrap;
+	font-family: 'Dela Gothic One';
+}
+
+.container-ptitle {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+}
+
+.principal-title {
+	display: flex;
+}
+
+.navlist-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.nav-list {
+	color: $suport-darkgrey-color;
+	font-family: 'Dela Gothic One', cursive;
+	margin: 5px 10px;
+
+}
+
+ul {
+	font-family: 'Dela Gothic One', cursive;
+	font-size: $font-size-m;
+	font-size: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.buttonout {
+	color: $suport-darkgrey-color;
+  font-size: $font-size-m;
+  font-family: 'Dela Gothic One', 'coursive';
+	font-size: 1rem;
+	border: 1px solid $suport-darkgrey-color;
+	padding: 5px;
+}
+
+.min-about {
+	font-size: 1rem;
+	font-family: 'Dela Gothic One', cursive;
+}
+
+.container-out-button {
+	height: 100%;
+	width: 200px;
+}
+
+.container-translate-button {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.button-translate {
+	color: $suport-darkgrey-color;
+	border: 1px solid $suport-darkgrey-color;
+}
