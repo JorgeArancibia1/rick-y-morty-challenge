@@ -14,10 +14,7 @@ export const BootstrapCard = (props) => {
           {typeCard === 'character' && <Card.Img variant="top" src={image} alt={alt} />}
           <Card.Body className='text-center'>
             <Card.Title>{name}</Card.Title>
-            {/* <p className="especie">Especie: {species}</p>
-          <p className="estado">Estado: {status}</p>
-          <p className="genero">Genero: {gender}</p>
-          <p className="origen">Origen: {origin.name}</p> */}
+            {/*  */}
           </Card.Body>
         </Card>
       </Link>

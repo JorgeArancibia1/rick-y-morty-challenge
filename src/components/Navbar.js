@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-// import { startLogout } from "../redux/actions/authAction";
+import { startLogout } from "../redux/actions/authAction";
 
 export const Navbar = () => {
   const { t, i18n } = useTranslation();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [language, setLanguage] = useState("en");
 
   const onChangeLanguage = () => {
@@ -20,8 +20,8 @@ export const Navbar = () => {
   };
 
   const handleLogout = () => {
-    // dispatch(startLogout());
-    console.log('onClick');
+    dispatch(startLogout());
+    console.log('Logout');
   };
 
   return (

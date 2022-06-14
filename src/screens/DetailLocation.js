@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
+import { Navbar } from '../components/Navbar';
 import { useFetchDetails } from '../hooks/useFetchDetails';
+import { Card } from 'react-bootstrap';
 
 export const DetailLocation = () => {
   const { id } = useParams()
@@ -7,14 +9,26 @@ export const DetailLocation = () => {
   const { info } = useFetchDetails('location', id);
 
   return (
-    <div>
-      <h1>{info?.name}</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="row mt-5">
+        <div className="col">
+          <div className="container-episode-card d-flex justify-content-center align-items-center">
+            <Card style={{ width: '18rem' }}>
+              <Card.Body>
+                <Card.Title>{info?.name}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">Dimension: {info?.dimension}</Card.Subtitle>
+                <Card.Text>
+                  Type: {info?.type}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
-
-
-
 
 // created: "2017-11-10T12:42:04.162Z"
 // dimension: "Dimension C-137"

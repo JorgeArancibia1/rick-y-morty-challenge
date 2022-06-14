@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
+import { startRegister } from '../redux/actions/authAction';
 import { createUser } from '../services/authService';
+import { useDispatch } from 'react-redux';
 
 export const Register = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [formRegisterValues, handleRegisterInputChange] = useForm({
     email: '',
@@ -15,7 +17,7 @@ export const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     createUser('POST', { email, password })
-    // dispatch(startRegister(email, rpassword));
+    dispatch(startRegister(email, password));
   };
 
   return (

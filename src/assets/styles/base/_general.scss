@@ -46,3 +46,12 @@
 .w100 {
 	width: 100vw;
 }
+
+body {
+	background-color: $principal-color !important;
+}
+
+h1, h2, h3, p {
+	color:$secondary-color
+}
+

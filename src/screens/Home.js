@@ -1,7 +1,6 @@
-import { Navbar } from "../components/Navbar"
 import { useFetch } from "../hooks/useFetch.js";
 import { useTranslation } from "react-i18next";
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { RenderList } from "../components/RenderList";
 
 export const Home = () => {
@@ -17,24 +16,21 @@ export const Home = () => {
       :
       <>
         <Container>
-          <div className="row">
-            <Navbar />
-          </div>
           {/* SEARCH INPUT */}
-          <section className="">
-            <h2>Characters</h2>
+          <h2>Characters</h2>
+          <Row className="row mt-2 scroll">
             <RenderList results={characters.results} />
-          </section>
+          </Row>
 
-          <section className="">
+          <Row className="scroll">
             <h2>Locations</h2>
             <RenderList typeCard="location" results={locations.results} />
-          </section>
+          </Row>
 
           <h2>Episodes</h2>
-          <section className="">
+          <Row className="scroll">
             <RenderList typeCard="episode" results={episodes.results} />
-          </section>
+          </Row>
           <footer className="container-flex-center-j my-5 ">
             <p>{t('footer.by')}<span>Jorge Arancibia</span></p>
           </footer>
