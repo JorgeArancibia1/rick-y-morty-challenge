@@ -1,11 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-// import { loginUser } from '../services/authService';
 import { startLogin } from '../redux/actions/authAction';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
+
 
   const [formLoginValues, handleLoginInputChange] = useForm({
     email: '',
@@ -18,6 +20,7 @@ export const Login = () => {
     e.preventDefault();
 
     dispatch(startLogin(email, password));
+    navigate('/')
   };
 
   return (
